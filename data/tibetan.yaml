@@ -1,0 +1,60 @@
+# RIME插件注册配置
+name: tibetan
+version: "1.0"
+dependencies:
+  - librime>=1.6.0
+
+# 模块配置
+modules:
+  - module: tibetan.so
+    translators:
+      - tibetan_translator
+    segmentors:
+      - tibetan_segmentor
+    processors:
+      - tibetan_processor
+
+# 输入方案继承树（可继承基础配置）
+import_tables:
+  - default
+  - luna_pinyin
+
+# 词典配置
+dictionary:
+  name: tibetan
+  file_type: text
+  format: yaml
+  sort: by_weight
+  use_preset_vocabulary: false
+
+# 引擎配置
+engine:
+  translators:
+    - tibetan_translator
+    - table_translator@tibetan
+    - punct_translator
+  segmentors:
+    - tibetan_segmentor
+    - ascii_segmentor
+    - matcher
+  processors:
+    - tibetan_processor
+    - ascii_processor
+    - speller
+
+# 自定义选项（可在GUI中配置）
+switches:
+  - name: ascii_mode
+    reset: 1
+    states: [ 藏文, 英文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+
+# 菜单样式
+style:
+  color_scheme: tibetan_blue
+  font_face: "Microsoft Himalaya"  # 推荐藏文字体
+  font_point: 16
+  label_font_point: 12
+  horizontal: true
+  inline_preedit: true

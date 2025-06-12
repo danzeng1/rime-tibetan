@@ -1,0 +1,55 @@
+schema:
+  schema_id: tibetan
+  name: 藏文输入法
+  version: "1.0"
+  author: "Your Name <your.email@example.com>"
+  description: |
+    基于RIME的完整藏文输入法实现
+    支持拉丁转写输入藏文字符
+
+translator:
+  dictionary: tibetan
+  prism: tibetan
+  enable_completion: true
+  enable_sentence: false
+  preedit_format:
+    - xform/([a-z]+)/\U$1/
+  comment_format:
+    - xform/^([a-z]+)$/$1/
+
+engine:
+  translators:
+    - tibetan_translator
+    - table_translator
+    - punct_translator
+    - reverse_lookup_translator
+  segmentors:
+    - tibetan_segmentor
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+  processors:
+    - tibetan_processor
+    - ascii_processor
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz'
+  initial_quality: 1.0
+  delimiter: " '"
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default

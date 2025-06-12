@@ -1,0 +1,41 @@
+---
+name: tibetan
+version: "0.1"
+sort: by_weight
+use_preset_vocabulary: true
+import_tables:
+  - luna_pinyin
+
+# 藏文词典
+...
+ཀ་  ka   1
+ཁ་  kha  1
+ག་  ga   1
+ང་  nga  1
+ཅ་  ca   1
+ཆ་  cha  1
+ཇ་  ja   1
+ཉ་  nya  1
+ཏ་  ta   1
+ཐ་  tha  1
+ད་  da   1
+ན་  na   1
+པ་  pa   1
+ཕ་  pha  1
+བ་  ba   1
+མ་  ma   1
+ཙ་  tsa  1
+ཚ་  tsha 1
+ཛ་  dza  1
+ཝ་  wa   1
+ཞ་  zha  1
+ཟ་  za   1
+འ་  'a   1
+ཡ་  ya   1
+ར་  ra   1
+ལ་  la   1
+ཤ་  sha  1
+ས་  sa   1
+ཧ་  ha   1
+ཨ་  a    1
+...
